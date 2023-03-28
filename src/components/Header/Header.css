@@ -1,0 +1,26 @@
+header{
+    background-color: #1C2B35;
+    height: 80px;
+    padding: 0px 100px;
+  
+}
+.header-container{
+    max-width: 1350px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.menu-wrap ul{
+    display: flex;
+    gap: 20px;
+}
+.menu-wrap ul li a{
+    color: #fff;
+    transition: .5s ease;
+}
+.menu-wrap ul li a:hover{
+    color: cornflowerblue;
+}

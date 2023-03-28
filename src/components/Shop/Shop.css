@@ -1,0 +1,19 @@
+.shop-wrapper{
+    max-width: 1350px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding: 50px 100px;
+    margin: 0 auto;
+    grid-gap: 30px;
+}
+.product-area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px;
+}
+
+.sidebar-area h4{
+    text-align: center;
+    font-size: 30px;
+}
