@@ -2,7 +2,6 @@ import React from 'react'
 import './ShoppingCart.css'
 
 const ShoppingCart = ({cart}) => {
-
   let totalPrice = 0
   let quantity = 0
   let shipping = 0
@@ -19,9 +18,6 @@ const ShoppingCart = ({cart}) => {
 
   let grandTotal  = shipping + totalPrice + tex
 
-  const handleClearCart = () => {
-    
-  }
   return (
     <>
         <div className="shopping-cart-area">
@@ -31,9 +27,6 @@ const ShoppingCart = ({cart}) => {
                 <p>Total Shipping Charge: ${shipping}</p>
                 <p>Tax: ${tex}</p>
                 <h3>Grand Total: ${grandTotal}</h3>
-
-                <button className='clearcart' onClick={handleClearCart}>Clear Cart</button>
-                <button className='review-order'>Review Order</button>
         </div>
     </>
   )

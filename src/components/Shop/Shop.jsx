@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { addToDb, getShoppingCart } from '../../assets/utilities/fakedb'
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../assets/utilities/fakedb'
 import Product from '../Product/Product'
 import './Shop.css'
 import ShoppingCart from './ShoppingCart'
+import { Link, useLoaderData } from 'react-router-dom'
 
 const Shop = () => {
 
   const [products, setProducts] = useState([])
   const [items, setItems] = useState([])
-
   useEffect(() => {
       fetch('products.json')
       .then( res => res.json())
@@ -18,6 +18,7 @@ const Shop = () => {
 
   useEffect(() => {
     const storedCart = getShoppingCart()
+    console.log(storedCart);
     const savedCart = []
     // Get Id for added Products
     for( const id in storedCart){
@@ -56,7 +57,10 @@ const Shop = () => {
       setItems(newCart)
       addToDb(products.id)
   }
-
+const handleDeleteCart = () => {
+    setItems([])
+    deleteShoppingCart()
+  }
   return (
     <>
 
@@ -74,7 +78,12 @@ const Shop = () => {
                 
             </div>
             <div className="sidebar-area">
+                <div className="sidbar-item-wrapper">
                 <ShoppingCart cart={items}></ShoppingCart>
+                <button className='clearcart' onClick={handleDeleteCart}>Clear Cart</button>
+                <Link to={'/order'} className='review-order'>Review Order</Link>
+                </div>
+               
             </div>
         </div>
     
